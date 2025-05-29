@@ -10,4 +10,5 @@ El proyecto está realizado con Springboot y gestionado con Maven.
 
 - `src/` - Código fuente del proyecto.
 - `pom.xml` - Archivo de configuración de Maven.
+- `prueba ticarum.postman_collection.json` trazas de postman.
 
