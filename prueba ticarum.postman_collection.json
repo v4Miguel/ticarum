@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "3781380f-43ef-41a1-a417-99aa641405aa",
+		"name": "prueba ticarum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43043403"
+	},
+	"item": [
+		{
+			"name": "1.a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/hospitales/1/camas"
+			},
+			"response": [
+				{
+					"name": "1.a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/hospitales/1/camas"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:45:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"estado\": \"LIBRE\",\n        \"hospital\": {\n            \"id\": 1,\n            \"nombre\": \"Hospital Central\"\n        },\n        \"dependencia\": {\n            \"id\": 1,\n            \"nombre\": \"Urgencias\",\n            \"hospital\": {\n                \"id\": 1,\n                \"nombre\": \"Hospital Central\"\n            }\n        }\n    },\n    {\n        \"id\": 2,\n        \"estado\": \"OCUPADA\",\n        \"hospital\": {\n            \"id\": 1,\n            \"nombre\": \"Hospital Central\"\n        },\n        \"dependencia\": {\n            \"id\": 2,\n            \"nombre\": \"Pediatría\",\n            \"hospital\": {\n                \"id\": 1,\n                \"nombre\": \"Hospital Central\"\n            }\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "1.b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/hospitales/1/dependencias"
+			},
+			"response": [
+				{
+					"name": "1.b",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/hospitales/1/dependencias"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:45:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Urgencias\",\n        \"hospital\": {\n            \"id\": 1,\n            \"nombre\": \"Hospital Central\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Pediatría\",\n        \"hospital\": {\n            \"id\": 1,\n            \"nombre\": \"Hospital Central\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "1.d",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idDependencia\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/hospitales/2/camas/2"
+			},
+			"response": [
+				{
+					"name": "1.d",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idDependencia\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/hospitales/2/camas/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"estado\": \"OCUPADA\",\n    \"hospital\": {\n        \"id\": 2,\n        \"nombre\": \"Hospital Norte\"\n    },\n    \"dependencia\": {\n        \"id\": 3,\n        \"nombre\": \"Cirugía\",\n        \"hospital\": {\n            \"id\": 2,\n            \"nombre\": \"Hospital Norte\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "1.e",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/hospitales/1/camas/1"
+			},
+			"response": [
+				{
+					"name": "1.e",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/hospitales/1/camas/1"
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "1.c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/hospitales/2/3/camas"
+			},
+			"response": [
+				{
+					"name": "1.c",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/hospitales/2/3/camas"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"estado\": \"OCUPADA\",\n        \"hospital\": {\n            \"id\": 2,\n            \"nombre\": \"Hospital Norte\"\n        },\n        \"dependencia\": {\n            \"id\": 3,\n            \"nombre\": \"Cirugía\",\n            \"hospital\": {\n                \"id\": 2,\n                \"nombre\": \"Hospital Norte\"\n            }\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "2.a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/camas/2"
+			},
+			"response": [
+				{
+					"name": "2.a",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/camas/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"estado\": \"OCUPADA\",\n    \"hospital\": {\n        \"id\": 2,\n        \"nombre\": \"Hospital Norte\"\n    },\n    \"dependencia\": {\n        \"id\": 3,\n        \"nombre\": \"Cirugía\",\n        \"hospital\": {\n            \"id\": 2,\n            \"nombre\": \"Hospital Norte\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "2.b",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8080/camas"
+			},
+			"response": [
+				{
+					"name": "2.b",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/camas"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"estado\": \"LIBRE\",\n    \"hospital\": null,\n    \"dependencia\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "2.c",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "AVERIADA",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/camas/3"
+			},
+			"response": [
+				{
+					"name": "2.c",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "AVERIADA",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/camas/3"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"estado\": \"AVERIADA\",\n    \"hospital\": null,\n    \"dependencia\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "2.d",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "AVERIADA"
+				},
+				"url": "localhost:8080/camas/2"
+			},
+			"response": [
+				{
+					"name": "2.d",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "AVERIADA"
+						},
+						"url": "localhost:8080/camas/2"
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 29 May 2025 14:46:31 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
